@@ -1,6 +1,6 @@
 import { defaultPages, Shell } from "@snellius/shell";
 import { render, screen, waitFor, within } from "@testing-library/react";
-import symbolUrl from "./assets/snellius/snellius-symbol-dark.svg";
+import symbolUrl from "./assets/snellius/mbfs-logo-dark-mono.svg";
 import { snelliusBrand } from "./brand";
 
 const meta = { version: "dev", synced: true, platform: "Kubernetes", capabilities: [], kinds: [] };
@@ -16,12 +16,12 @@ beforeEach(() => {
 
 afterEach(() => vi.unstubAllGlobals());
 
-it("the app header shows the Snellius symbol and wordmark, and titles the landing page snellius", async () => {
+it("the app header shows the MBFS logo and wordmark, and titles the landing page snellius", async () => {
   render(<Shell extension={{ brand: snelliusBrand }} pages={defaultPages} />);
   const home = await screen.findByRole("link", { name: "snellius" });
   const logo = within(home).getByRole("presentation");
   expect(logo).toHaveAttribute("src", symbolUrl);
-  expect(logo).toHaveAttribute("width", "24");
+  expect(logo).toHaveAttribute("width", "72");
   expect(within(home).getByText("snellius")).toBeInTheDocument();
   await waitFor(() => expect(document.title).toBe("snellius"));
 });

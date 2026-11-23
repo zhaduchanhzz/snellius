@@ -1,10 +1,10 @@
 import type { Brand } from "@snellius/shell";
-import logoUrl from "./assets/snellius/snellius-symbol-dark.svg";
+import logoUrl from "./assets/snellius/mbfs-logo-dark-mono.svg";
 
-/** The Snellius identity: the prism symbol (dark variant, white outline, for the ink header) and the lowercase wordmark. */
+/** The Snellius identity: the MBFS logo (white mono variant for the ink header, a 3:1 wordmark shown 24px high) and the lowercase wordmark. */
 export const snelliusBrand: Brand = {
   productName: "snellius",
-  logo: <img src={logoUrl} alt="" width={24} height={24} />,
+  logo: <img src={logoUrl} alt="" width={72} height={24} />,
   // Shown on the About page only for this brand; a downstream brand sets its own or none, links included.
   descriptor: "Kubernetes Gateway Management & Observability",
   tagline: "See the whole picture.",
